@@ -25,3 +25,23 @@ body{
   border: none;
   box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
 }
+
+.bg-theme{
+  background-color: var(--primary-color);
+}
+.bg-secondary-theme{
+  background-color: var(--secondary-color);
+}
+
+.text-theme-primary{
+  color: var(--primary-color);
+}
+
+
+.btn-sub{
+  height: 58px;
+  border: none;
+  font-variant: 13px;
+  color: white;
+  background-color: var(--primary-color);
+}

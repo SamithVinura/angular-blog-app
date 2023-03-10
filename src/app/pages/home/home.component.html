@@ -7,45 +7,37 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 mb-2">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-lg-3 mb-2">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-lg-3 mb-2">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-lg-3 mb-2">
-        <app-post-card></app-post-card>
+      <div class="col-lg-3 mb-1" *ngFor="let featuredPost of featuredPosts ">
+        <app-post-card [postData]="featuredPost"></app-post-card>
       </div>
     </div>
   </div>
 </section>
 
-<section class="container mt-5">
+<!-- <section class="container mt-5">
+
   <div class="col-md-12 text-center">
     <h2>Leatest Posts</h2>
     <p class="text-white">Lorem ipsum dolor sit amet</p>
   </div>
-  <div class="row">
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
-    </div>
-    <div class="col-md-4 mt-3">
-      <app-post-card></app-post-card>
+  <div class="row" *ngFor="let leatestPost of leatestPosts ">
+    <div class="col-lg-3 mb-1">
+      <app-post-card [postData]="leatestPost"></app-post-card>
     </div>
   </div>
+</section>
+ -->
+<section class="container">
+    <div class="row">
+      <div class="col-md-12 text-center mt-5">
+        <h2 >Leatest Posts</h2>
+        <p >Lorem ipsum dolor sit amet</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 mb-1" *ngFor="let leatestPost of leatestPosts ">
+        <app-post-card [postData]="leatestPost"></app-post-card>
+      </div>
+    </div>
+
 </section>

@@ -8,7 +8,7 @@
           alt="" class="card-img-top img-fluid">
         <div class="card-body">
           <small class="bg-light text-danger text-center">{{singlePost.category.category}}</small>
-          <small class="bg-light text-success text-center ms-3">Featured</small>
+          <small class="bg-light text-success text-center ms-3" *ngIf="singlePost.isFeatured">Featured</small>
           <small class="bg-light text-info text-center ms-3">Views - {{singlePost.views}}</small>
           <small class="bg-light text-warning text-center ms-3">Last Updated - {{singlePost.createAt }}</small>
           <h1 class="mt-3 mb-3">{{singlePost.title}}</h1>

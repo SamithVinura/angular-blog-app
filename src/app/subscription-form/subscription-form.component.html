@@ -2,16 +2,55 @@
   <div class="card-body">
     <div class="text-center mt-3 mb-5">
       <h3>SUBSCRIPTION FORM</h3>
-      <p class="m-auto subs-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <form action="" class="row mb-5 mt-3">
+      <p class="m-auto subs-text">Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <form class="row mb-5 mt-3" #subForm="ngForm"
+        (ngSubmit)="onSubmit(subForm)">
         <div class="form-group col-md-5 mb-2">
-          <input type="text" class="form-group col-md-5 shadow-effect" placeholder="Your Name">
+          <input type="text" class="form-control col-md-5"
+            type="text"
+            placeholder="Your Name"
+            name="name"
+            #Name='ngModel'
+            ngModel
+            required
+            [ngClass]="{
+            'is-invalid': Name.touched && Name.invalid
+            }">
+          <div
+            class="text-danger"
+            *ngIf="Name.touched && Name.invalid">
+            <div
+              *ngIf="Name.errors?.['required']">Name is required
+            </div>
+            </div>
         </div>
         <div class="form-group col-md-5 ">
-          <input type="email" class="form-group col-md-5 shadow-effect" placeholder="Your Email">
+          <input type="email" class="form-control col-md-5"
+            placeholder="Your Email"
+            type="email"
+            name="email"
+            required
+            email
+            #Email="ngModel"
+            ngModel
+            [ngClass]="{
+              'is-invalid': Email.touched && Email.invalid
+              }">
+            <div
+            class="text-danger"
+            *ngIf="Email.touched && Email.invalid">
+            <div
+              *ngIf="Email.errors?.['required']">Email is required
+            </div>
+            <div
+              *ngIf="Email.errors?.['email']">please enter valid email
+            </div>
+            </div>
         </div>
-        <div class="col-md-2 mt-2">
-          <button class="btn btn-info btn-block btn-sub">SUBSCRIBE</button>
+        <div class="col-md-2 ">
+          <button class="btn btn-info btn-block btn-sub" [disabled]="subForm.invalid">SUBSCRIBE</button>
         </div>
       </form>
     </div>

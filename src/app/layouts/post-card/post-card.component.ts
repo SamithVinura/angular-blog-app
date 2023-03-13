@@ -13,7 +13,7 @@ export class PostCardComponent implements OnInit {
   }
 
   ngOnInit():void{
-    console.log("post",this.postData)
+
   }
 
 }

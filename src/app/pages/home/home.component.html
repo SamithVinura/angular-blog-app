@@ -14,19 +14,6 @@
   </div>
 </section>
 
-<!-- <section class="container mt-5">
-
-  <div class="col-md-12 text-center">
-    <h2>Leatest Posts</h2>
-    <p class="text-white">Lorem ipsum dolor sit amet</p>
-  </div>
-  <div class="row" *ngFor="let leatestPost of leatestPosts ">
-    <div class="col-lg-3 mb-1">
-      <app-post-card [postData]="leatestPost"></app-post-card>
-    </div>
-  </div>
-</section>
- -->
 <section class="container">
     <div class="row">
       <div class="col-md-12 text-center mt-5">
@@ -35,9 +22,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 mb-1" *ngFor="let leatestPost of leatestPosts ">
+      <div class="col-lg-3 mb-3" *ngFor="let leatestPost of leatestPosts ">
         <app-post-card [postData]="leatestPost"></app-post-card>
       </div>
     </div>
-
 </section>

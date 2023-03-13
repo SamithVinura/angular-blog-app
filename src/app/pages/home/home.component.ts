@@ -8,7 +8,8 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class HomeComponent implements OnInit {
   featuredPosts: any;
-  leatestPosts:any
+  leatestPosts: any;
+
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
@@ -20,11 +21,14 @@ export class HomeComponent implements OnInit {
         .slice(0, 4);
       this.featuredPosts = filteredFeaturedPosts;
 
-      const filteredLeatestPosts = val
-        .sort((a, b) => a['createAt'] - b['createAt'])
-        .slice(0, 4);
-
-        this.leatestPosts = filteredLeatestPosts;
+      const filteredLeatestPosts = val.sort(
+        (a, b) => a['createAt'] - b['createAt']
+      );
+      this.leatestPosts = filteredLeatestPosts;
     });
+
   }
+
+
 }
+

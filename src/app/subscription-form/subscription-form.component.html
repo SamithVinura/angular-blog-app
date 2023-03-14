@@ -5,8 +5,11 @@
       <p class="m-auto subs-text">Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua.</p>
+        <div
+              class="alert alert-info mt-3" *ngIf="!isSubscribed">Thank you for subscribing to our news letter service
+            </div>
       <form class="row mb-5 mt-3" #subForm="ngForm"
-        (ngSubmit)="onSubmit(subForm)">
+        (ngSubmit)="onSubmit(subForm)" *ngIf="isSubscribed">
         <div class="form-group col-md-5 mb-2">
           <input type="text" class="form-control col-md-5"
             type="text"
@@ -47,7 +50,12 @@
             <div
               *ngIf="Email.errors?.['email']">please enter valid email
             </div>
+
             </div>
+            <div
+            class="text-danger" *ngIf="isEmailexits && isSubscribed">This email is exits
+            </div>
+
         </div>
         <div class="col-md-2 ">
           <button class="btn btn-info btn-block btn-sub" [disabled]="subForm.invalid">SUBSCRIBE</button>

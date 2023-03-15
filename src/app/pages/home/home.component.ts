@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.postsService.loadData().subscribe((val) => {
+
       const filteredFeaturedPosts = val
         .filter((post) => {
           return post['isFeatured'] === true;

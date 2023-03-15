@@ -24,6 +24,7 @@ import { ListComponent } from './comments/list/list.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
 import { FormsModule } from '@angular/forms';
+import { TimestampPipe } from './pipes/timestamp.pipe';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     CommentformComponent,
     ListComponent,
     AboutUsComponent,
-    PostCardComponent
+    PostCardComponent,
+    TimestampPipe
   ],
   imports: [
     BrowserModule,
